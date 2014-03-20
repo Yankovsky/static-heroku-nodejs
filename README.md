@@ -1,6 +1,9 @@
 static-heroku-nodejs
 ====================
 
+Demo: http://static-heroku-nodejs.herokuapp.com/
+
+Step-by-step guide:
 1) Start new app and "git init" it.
 2) Go to https://www.heroku.com and sign up there.
 3) On https://dashboard.heroku.com/apps page click on Create a new app.
@@ -17,3 +20,5 @@ Locally server can be started by "node app.js" command (you need nodejs installe
 8) Now you need to create package.json file and the easiest way to do it is use "npm install" command.
 Just press enter few times - you don't to change anything.
 9) Now commit all changes and push it to Heroku using "git push heroku master".
+10) Go to your app page on Heroku website and click on little rectangle with arrow near the name of your application.
+It will open your static application. That's it!
