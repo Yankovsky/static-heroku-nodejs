@@ -1,17 +1,17 @@
-var http = require('http'),
-    fs = require('fs')
-var port = process.env.PORT || 3000
-http.createServer(function(req, res) {
-    var url = './' + (req.url == '/' ? 'index.html' : req.url)
-    fs.readFile(url, function(err, html) {
-        if (err) {
-            var message404 = "There is no such page! <a href='/'>Back to home page</a>"
-            res.writeHead(404, {'Content-Type': 'text/html', 'Content-Length': message404.length})
-            res.write(message404)
-        } else {
-            res.writeHead(200, {'Content-Type': 'text/html', 'Content-Length': html.length})
-            res.write(html)
-        }
-        res.end()
-    })
+const http = require('http')
+const fs = require('fs')
+
+const port = process.env.PORT || 3000
+
+http.createServer((req, res) => {
+  const filePath = __dirname + (req.url === '/' ? '/index.html' : req.url)
+  fs.readFile(filePath, (err, data) => {
+    if (err) {
+      res.writeHead(404)
+      res.end(JSON.stringify(err))
+      return
+    }
+    res.writeHead(200)
+    res.end(data)
+  })
 }).listen(port)
