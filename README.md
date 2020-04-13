@@ -18,7 +18,7 @@ Locally server can be started by ```node app.js``` command (you need nodejs inst
 7. Heroku doesn't know anything about your **app.js** file. In order to notify it, you need to create **Procfile** consisting of only line of code
 ```web: node app.js```.
 8. Now you need to create **package.json** file and the easiest way to do it is use ```npm install``` command.
-Just press enter few times - you don't to change anything.
+Just press enter few times - you don't need to change anything.
 9. Now commit all changes and push it to Heroku using ```git push heroku master```.
 10. Go to your app page on Heroku website and click on little rectangle with arrow near the name of your application.
 It will open your static application. That's it!
